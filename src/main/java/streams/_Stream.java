@@ -1,6 +1,8 @@
 package streams;
 
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 public class _Stream {
     public static void main(String[] args) {
@@ -12,6 +14,13 @@ public class _Stream {
                 new Person("Alice", Gender.FEMALE)
         );
 
+//        people.stream()
+//                .map(person -> person.gender)
+//                .collect(Collectors.toSet())
+//                .forEach(System.out::println);
+
+        people.stream()
+                .allMatch(person -> Gender.FEMALE.equals(person.gender));
     }
 
     static class Person {
